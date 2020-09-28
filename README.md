@@ -1,6 +1,9 @@
-# Salty
+# libsalty2
 
-Libsalty provides bindings to [libsodium](https://github.com/jedisct1/libsodium)
+Libsalty2 provides bindings to [libsodium](https://github.com/jedisct1/libsodium)
+
+NOTICE: This is a fork of the original, which is no longer maintained. Hence the `2` appended.
+
 for Elixir, based on [Erlang nif](http://erlang.org/doc/man/erl_nif.html).
 
 credits to [**Libsodium**](https://github.com/jedisct1/libsodium): author [Frank Denis](https://github.com/jedisct1)
@@ -9,11 +12,11 @@ Libsodium is licensed under [ISC License](https://github.com/jedisct1/libsodium/
 
 ## Hex
 
-This package is available through [Hex](https://hex.pm/packages/libsalty).
+This package is available through [Hex](https://hex.pm/packages/libsalty2).
 
 ## Requirements
 
-Libsalty requires that libsodium 1.0.12 or later is already installed on your
+Libsalty2 requires that libsodium 1.0.12 or later is already installed on your
 system. If you receive compiler warnings or a missing symbol error when trying
 to use libsalty, it's likely that you're running on a system with an old version
 of libsodium.
