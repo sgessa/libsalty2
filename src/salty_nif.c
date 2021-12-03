@@ -1179,7 +1179,17 @@ SALTY_CONST_INT64(generichash_blake2b_KEYBYTES);
 SALTY_CONST_INT64(generichash_blake2b_SALTBYTES);
 SALTY_CONST_INT64(generichash_blake2b_PERSONALBYTES);
 
-SALTY_FUNC(generichash_blake2b, 3) DO
+SALTY_FUNC(generichash_blake2b, 2) DO
+    SALTY_INPUT_UINT64(0, outlen);
+    SALTY_INPUT_BIN(1, input, SALTY_BIN_NO_SIZE);
+
+    SALTY_OUTPUT_BIN(hash, outlen);
+
+    SALTY_CALL(crypto_generichash_blake2b(hash.data, outlen, input.data,
+                input.size, NULL, 0), hash);
+END_OK_WITH(hash);
+
+SALTY_FUNC(generichash_blake2b_key, 3) DO
     SALTY_INPUT_UINT64(0, outlen);
     SALTY_INPUT_BIN(1, input, SALTY_BIN_NO_SIZE);
     SALTY_INPUT_BIN(2, key, crypto_generichash_blake2b_KEYBYTES_MIN);
@@ -2114,7 +2124,8 @@ salty_exports[] = {
     SALTY_EXPORT_CONS(generichash_blake2b_KEYBYTES, 0),
     SALTY_EXPORT_CONS(generichash_blake2b_SALTBYTES, 0),
     SALTY_EXPORT_CONS(generichash_blake2b_PERSONALBYTES, 0),
-    SALTY_EXPORT_FUNC(generichash_blake2b, 3),
+    SALTY_EXPORT_FUNC(generichash_blake2b, 2),
+    SALTY_EXPORT_FUNC(generichash_blake2b_key, 3),
     SALTY_EXPORT_FUNC(generichash_blake2b_salt_personal, 5),
     SALTY_EXPORT_FUNC(generichash_blake2b_init, 2),
     SALTY_EXPORT_FUNC(generichash_blake2b_init_salt_personal, 4),

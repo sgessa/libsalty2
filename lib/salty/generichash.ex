@@ -14,7 +14,7 @@ defmodule Salty.Generichash do
   @callback bytes_min() :: non_neg_integer()
 
   @callback bytes_max() :: non_neg_integer()
-  
+
   @callback bytes() :: non_neg_integer()
 
   @callback keybytes_min() :: non_neg_integer()
@@ -22,6 +22,8 @@ defmodule Salty.Generichash do
   @callback keybytes_max :: non_neg_integer()
 
   @callback keybytes :: non_neg_integer()
+
+  @callback hash(binary(), binary()) :: {:ok, binary()} | {:error, atom()}
 
   @callback hash(binary(), binary(), binary()) :: {:ok, binary()} | {:error, atom()}
 
