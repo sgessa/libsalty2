@@ -1,6 +1,6 @@
 defmodule Salty.Supervisor do
   @moduledoc """
-  Salty.Supervisor is the root supervisor of GenServer processes in libsalty.
+  The root supervisor of `GenServer` processes in `libsalty`.
   """
 
   use Supervisor

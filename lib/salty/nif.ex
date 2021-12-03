@@ -3,7 +3,7 @@ defmodule Salty.Nif do
   @compile {:autoload, false}
 
   @doc """
-  load_nif is called when Salty.Application is started. It loads the libary and
+  load_nif is called when Salty.Application is started. It loads the library and
   binds the Elixir module methods to erl_nif calls.
   """
   def load_nif do
