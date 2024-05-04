@@ -1,6 +1,6 @@
 defmodule Salty.Supervisor do
   @moduledoc """
-  The root supervisor of `GenServer` processes in `libsalty`.
+  The root supervisor of `GenServer` processes in `libsalty2`.
   """
 
   use Supervisor
@@ -9,11 +9,8 @@ defmodule Salty.Supervisor do
     Supervisor.start_link(__MODULE__, [])
   end
 
+  @impl Supervisor
   def init([]) do
-    children = [
-      # worker(Salty.Server, [], restart: :transient)
-    ]
-
-    supervise(children, strategy: :one_for_one)
+    Supervisor.init([], strategy: :one_for_one)
   end
 end
