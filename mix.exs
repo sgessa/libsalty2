@@ -8,7 +8,7 @@ defmodule Salty.Mixfile do
     [
       app: :libsalty2,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.9",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       compilers: [:elixir_make] ++ Mix.compilers(),
@@ -27,7 +27,7 @@ defmodule Salty.Mixfile do
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:elixir_make, "~> 0.4", runtime: false}
+      {:elixir_make, "~> 0.8", runtime: false}
     ]
   end
 
